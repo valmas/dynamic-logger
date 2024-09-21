@@ -1,0 +1,19 @@
+<configuration debug="true" scan="true" scanPeriod="10 seconds">
+    <springProperty scope="context" name="logLevel" source="log.level" defaultValue="INFO" />
+    <appender name="consoleAppender"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <Pattern>%d %-4relative [%thread] %-5level %logger{35} - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.sword.dynamic.logger" level="INFO" additivity="false">
+        <appender-ref ref="consoleAppender" />
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="consoleAppender" />
+    </root>
+</configuration>

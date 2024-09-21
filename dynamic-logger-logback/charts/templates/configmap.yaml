@@ -1,0 +1,12 @@
+#
+# Copyright 2023 European Union. All rights reserved.
+# European Union PROPRIETARY/CONFIDENTIAL.
+#
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-prop-dynamic-logger
+data:
+  JAVA_TOOL_OPTIONS: {{ quote .Values.java_tool_options }}
+  LOGBACK_LOCATION: {{ quote .Values.logback.location }}
